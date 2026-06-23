@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulation Translation POC</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero">
+        <p class="eyebrow">Simulation Translation POC</p>
+        <h1>Live translated narration for learning videos</h1>
+        <p class="intro">
+          Select English, isiZulu or Afrikaans. The POC translates the script on demand, mutes the original video when needed, reads the translated narration aloud and pauses playback if narration needs time to catch up.
+        </p>
+      </section>
+
+      <section class="demo-card">
+        <div class="video-wrap">
+          <video id="lessonVideo" controls preload="metadata" playsinline>
+            <source src="/videos/segmentation-video.mp4" type="video/mp4" />
+            Your browser does not support the video element.
+          </video>
+        </div>
+
+        <div class="controls-panel">
+          <div class="control-group">
+            <label for="languageSelect">Narration language</label>
+            <select id="languageSelect">
+              <option value="en">English</option>
+              <option value="zu">isiZulu</option>
+              <option value="af">Afrikaans</option>
+            </select>
+          </div>
+
+          <button id="prepareButton" type="button">Prepare selected language</button>
+
+          <label class="checkbox-row">
+            <input id="pauseToggle" type="checkbox" checked />
+            Pause video while narration catches up
+          </label>
+
+          <div class="status-box" aria-live="polite">
+            <span class="status-label">Status</span>
+            <p id="statusText">Load the page, choose a language, then prepare the narration.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="caption-card">
+        <span class="caption-label">Current caption</span>
+        <p id="captionText">Captions will appear here while the video plays.</p>
+      </section>
+
+      <section class="notes-card">
+        <h2>POC rules</h2>
+        <ul>
+          <li>English uses the original video audio and English captions.</li>
+          <li>isiZulu and Afrikaans mute the original video and use translated narration.</li>
+          <li>Translations are generated when the language is selected, then cached in this browser session.</li>
+          <li>If browser voice support is limited, captions still show the translated text.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="/src/main.js" type="module"></script>
+  </body>
+</html>
