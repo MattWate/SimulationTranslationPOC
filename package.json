@@ -1,0 +1,14 @@
+{
+  "name": "simulation-translation-poc",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static POC for translating an educational video script and reading translated narration during playback.",
+  "scripts": {
+    "dev": "netlify dev",
+    "start": "netlify dev"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "netlify-cli": "latest"
+  }
+}
