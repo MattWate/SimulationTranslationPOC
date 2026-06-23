@@ -5,7 +5,7 @@ const pauseToggle = document.querySelector("#pauseToggle");
 const statusText = document.querySelector("#statusText");
 const captionText = document.querySelector("#captionText");
 
-const SCRIPT_URL = "/scripts/segmentation-script.json";
+const SCRIPT_URL = "/public/scripts/segmentation-script.json";
 const TRANSLATE_ENDPOINT = "/.netlify/functions/translate-script";
 
 const languageLabels = {
